@@ -8,7 +8,7 @@ export const main = async (event, context, callback) => {
     IndexName: process.env.indexName,
     KeyConditionExpression: "category = :category",
     ExpressionAttributeValues: {
-      ":category": event.body.category
+      ":category": event.queryStringParameters.category
     },
   };
   const headers = {

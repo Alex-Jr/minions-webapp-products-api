@@ -20,8 +20,8 @@ export const main = async (event, context, callback) => {
     .then((data) => {
       const response = {
         statusCode: 200,
-        header: headers,
-        body: data,
+        headers: headers,
+        body: JSON.stringify(data.Item),
       };
       callback(null, response);
       return;
@@ -29,8 +29,8 @@ export const main = async (event, context, callback) => {
     .catch((err) => {
       const response = {
         statusCode: 500,
-        header: headers,
-        body: { err: err.message },
+        headers: headers,
+        body: JSON.stringify({ err: err.message }),
       };
       callback(null, response);
       return;

@@ -45,3 +45,6 @@ functions:
           path: products
           method: get
           cors: true
+
+resources:
+  - ${file(resources/api-gateway-errors.yml)}
